@@ -9,5 +9,6 @@
 
 <p th:text="${article.content}"></p>
 <a th:href="@{/board/delete(id=${article.id})}">글 삭제</a>
+<a th:href="@{/board/modify/(id=${article.id})}">글 수정</a>
 </body>
 </html>

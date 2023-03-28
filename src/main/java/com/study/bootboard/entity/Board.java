@@ -10,6 +10,7 @@ import lombok.Setter;
 
 @Entity // table
 @Getter
+@Setter
 @RequiredArgsConstructor
 public class Board {
 
