@@ -20,23 +20,28 @@ public class boardController {
         return "board_write";
     }
 
+    // 게시물 작성 페이지 맵핑
     @PostMapping("/board/writePro")
     public String boardWritePro(Board board) {
         boardService.write(board);
         return "";
     }
 
+    // 게시물 리스트 페이지 맵핑
     @GetMapping("board/list")
     public String boardList(Model model) {
         model.addAttribute("list", boardService.boardList());
         return "board_list";
     }
 
+    // 웰컴 페이지 맵핑
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("list", boardService.boardList());
         return "board_list";
     }
 
+    // 상세 페이지 맵핑
     @GetMapping("board/view")
     public String boardView(Model model, Integer id) {
         model.addAttribute("article", boardService.boardView(id));
