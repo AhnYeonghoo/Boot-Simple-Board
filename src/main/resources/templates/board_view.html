@@ -8,5 +8,6 @@
 <h1 th:text="${article.title}"></h1>
 
 <p th:text="${article.content}"></p>
+<a th:href="@{/board/delete(id=${article.id})}">글 삭제</a>
 </body>
 </html>
